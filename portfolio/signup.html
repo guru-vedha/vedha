@@ -1,0 +1,64 @@
+
+<html lang="en">
+  <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="1090265088000-k8m145m70ahlurh7qvtnup4uub55rc92.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  </head>
+  <body>
+    
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <a href="#" onclick="signOut();">Sign out</a>
+    <script>
+      function onSignIn(googleUser) {
+        var isSignedIn = gapi.auth2.getAuthInstance().isSignedIn.get();
+      
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        var id = profile.getId();
+        var email = profile.getEmail();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " +  id_token);
+        saveUserData(id, email); 
+        
+        // save data to our database for reference
+      }
+      
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+            console.log('User signed out.');
+            });
+          }
+          function saveUserData(id, email) {
+        $.post(
+          "signupInsert.php",
+          {
+            authProvider: "Google",
+            id:id,
+            email: email
+          },
+          function (response,status) {
+              console.log("logged in");
+              alert("logged in successfully");
+              window.location.href = "http://localhost/portfolio/login1.html";
+          }
+          
+        );
+          
+          }
+
+    </script>
+    
+  </body>
+</html>

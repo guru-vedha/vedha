@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>business ludo review</title>
+</head>
+<body>
+
+    <form action="DAO/ReviewUpdation.php" method="post">
+        <table>
+            <tr><td> Name:</td>
+            <td><input type="text" name="name" id="firstName"></td>
+        </tr>
+   
+        
+
+        <tr><td> Position:</td>
+            <td><input type="text" name="position" id="emailAddress"></td>
+        </tr>
+
+        <tr><td> Company:</td>
+            <td><input type="text" name="company" id="emailAddress"></td>
+        </tr>
+
+        <tr><td> rating:</td>
+            <td><input type="text" name="rating" id="rating" placeholder="out of 5"></td>
+        </tr>
+        
+        <tr><td> review:</td>
+            <td><textarea name="review" rows="10" cols="22"></textarea></td>
+        </tr>
+
+        <tr><td><input type="submit" value="Submit"></td></tr>
+    </form>
+    
+</body>
+</html>
+
+<!-- /DAO/businessludoReviewInsert INSERT INTO `business_ludo_reviews` (`ID`, `name`, `email`, `date`, `review`, `rating`) VALUES (NULL, 'David warner', 'warner@gmail.com', CURRENT_DATE(), 'good game', '5'); -->

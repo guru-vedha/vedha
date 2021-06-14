@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+
+
+
+  <title>Login Form</title>
+  
+  
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+  
+<style>
+body {
+  background: #eee !important;
+}
+
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type=text], #textarea{
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+</style>
+
+  
+
+  
+  
+  
+
+
+</head>
+
+<body translate="no" >
+  <div class="wrapper">
+    <form class="form-signin" action = "ReviewInsert.php" method = "POST">       
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" name="name" placeholder="Enter your name" required="" autofocus="" /><br>
+      <input type="text" class="form-control" name="position" placeholder="Enter your Job title" required=""/><br>   
+      <input type="text" class="form-control" name="company" placeholder="Enter your company/institution name" required=""/><br>   
+      <input type="number" class="form-control" name="rating" placeholder="Enter your rating out of 5" required=""/><br>
+      <textarea cols="40" rows="5" class = "form-control" name = "review" placeholder="Enter Your Review" required=""></textarea>   
+	  <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="">Add Review</button> 
+    </form>
+  </div>
+
+
+  <!-- try {
+    throw new Exception("Some erro message occured during connecting to database");
+  }
+
+  catch(Exception $erormsg)
+  {
+    echo $erormsg->getMessage()
+  } -->
+</body>
+
+</html>
+ 
